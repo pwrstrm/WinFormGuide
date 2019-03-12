@@ -30,8 +30,8 @@ $Form.Size = New-Object System.Drawing.Point(385,300) # Width, Height
 
 # Tab Control
 $tabcontroller = New-Object System.Windows.Forms.TabControl
-$tabcontroller.Location = New-Object System.Drawing.Point(0,0)
-$tabcontroller.Size = New-Object System.Drawing.Point(($Form.ClientSize.Width),($Form.ClientSize.Height))
+$tabcontroller.Location = New-Object System.Drawing.Point(0,0) # Location in top left corner
+$tabcontroller.Size = New-Object System.Drawing.Point(($Form.ClientSize.Width),($Form.ClientSize.Height)) # Dynamic size based on Form
 $Form.Controls.Add($tabcontroller)
 
 # Tab Page - Main
@@ -39,7 +39,7 @@ $tp_main = New-Object System.Windows.Forms.TabPage
 $tp_main.DataBindings.DefaultDataSourceUpdateMode = 0
 $tp_main.UseVisualStyleBackColor = $true
 $tp_main.Text = "Main"
-$tabcontroller.Controls.Add($tp_main)
+$tabcontroller.Controls.Add($tp_main) # Adding object to Tab Controller instead of Form
 
 # Tab Page - Other
 $tp_other = New-Object System.Windows.Forms.TabPage
@@ -51,7 +51,7 @@ $tabcontroller.Controls.Add($tp_other)
 # Label
 $la_input = New-Object System.Windows.Forms.Label
 $la_input.Location = New-Object System.Drawing.Point(15,15)
-$la_input.AutoSize = $true
+$la_input.AutoSize = $true # Change size depending on text
 $la_input.Text = "Input:"
 $la_input.Font = "Microsoft Sans Serif, 10"
 $tp_main.Controls.Add($la_input)
