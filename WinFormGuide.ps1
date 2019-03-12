@@ -1,12 +1,10 @@
 <#
-    
-    Interface Script
-
     .SYNOPSIS
-    
+    	Windows Form Demonstration.
     
     .DESCRIPTION
-        
+        This script is a executable demonstration on some of the Windows Forms objects.
+	The meaning behind this is for beginners to play around, change values and learn.
 
     .INFORMATION
         Version: 1.0.0
@@ -15,7 +13,7 @@
         
     .CHANGELOG
         1601-01-01: 
-
+    	
 #>
 
 # Windows Form
@@ -91,19 +89,17 @@ $lv_list.GridLines = $true
 $lv_list.FullRowSelect = $true
 $tp_other.Controls.Add($lv_list)
 
-# Column - Dummy
+# Column - Dummy (You can't align the first one, there for the solution is to have a dummy one)
 $columnHeader1 = New-Object System.Windows.Forms.ColumnHeader
-$columnHeader1.TextAlign = "Center"
 $columnHeader1.Width = 0
-$columnHeader1.Text = ""
 $lv_list.Columns.Add($columnHeader1) | Out-Null
 
 # Column - Name
 $columnHeader2 = New-Object System.Windows.Forms.ColumnHeader
-$columnHeader2.TextAlign = "Center"
-$columnHeader2.Width = ($lv_list.ClientSize.Width)/2
-$columnHeader2.Text = "Date"
-$lv_list.Columns.Add($columnHeader2) | Out-Null
+$columnHeader2.TextAlign = "Center" # Align in center within grid
+$columnHeader2.Width = ($lv_list.ClientSize.Width)/2 # Dynamic width based of Listview width
+$columnHeader2.Text = "Date" # Text to display at top of column
+$lv_list.Columns.Add($columnHeader2) | Out-Null # Adds column without displaying any code in terminal
 
 # Column - Value
 $columnHeader3 = New-Object System.Windows.Forms.ColumnHeader
